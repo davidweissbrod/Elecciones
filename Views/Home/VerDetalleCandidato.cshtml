@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Agregar Candidato";
+    Layout = "_Layout";
+}
+    <table>
+        <tr>
+            <td>@ViewBag.detallesCandidato.Apellido</td>
+            <td>@ViewBag.detallesCandidato.Nombre</td>
+            <td><img src="@ViewBag.detallesCandidato.Foto" alt = "Foto Candidato"></td>
+            <td>@ViewBag.detallesCandidato.FechaNacimiento</td>
+            <td>@ViewBag.detallesCandidato.Postulacion</td>
+        </tr>
+    </table>
+    
+<p>
+    <a href='@Url.Action("AgregarCandidato", "Home", new { idPartido = Model.IdPartido })'>Agregar Candidato</a>
+</p>
+    
+   

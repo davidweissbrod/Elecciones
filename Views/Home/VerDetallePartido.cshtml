@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Agregar Candidato";
+    Layout = "_Layout";
+}
+<header>
+    <tr><a href='@Url.Action("Index")'></a></tr>
+    <tr><a href='@Url.Action("Elecciones")'></a></tr>
+    <tr><a href='@Url.Action("Creditos")'></a></tr>
+</header>
+<div class="partido-elegido">
+    <h1>@ViewBag.detallesPartido.Nombre</h1>
+    <img src="\img\@ViewBag.detallesPartido.Logo" alt="Logo Partido">
+    <h3>@ViewBag.detallesPartido.SitioWeb</h3>
+    <h3>@ViewBag.detallesPartido.FechaFundacion</h3>
+    <h3>@ViewBag.detallesPartido.CantidadDiputados</h3>
+    <h3>@ViewBag.detallesPartido.CantidadSenadores</h3>
+</div>
+@for (int i = 0; i < ViewBag.detallesPartido.Length; i++)
+{
+    <div class = "card">
+        <h3>@ViewBag.detallesCandidato[i].Apellido</h3>
+        <a href= '@Url.Action("VerDetalleCandidato", new { IdCandidato = ViewBag.detallesCandidato[i].IdCandidato } )'>Detalles del candidato</a>
+        <a href='@Url.Action("EliminarCandidato", new { IdCandidato = ViewBag.detallesCandidato[i].IdCandidato, IdPartido = ViewBag.detallesPartido[i].IdPartido } )'>Eliminar candidato</a>
+    </div>
+}
+<a href='@Url.Action("AgregarCandidato", new { IdPartido = @ViewBag.detallesPartidos.IdCandidato})'>Agregar Candidato</a>
