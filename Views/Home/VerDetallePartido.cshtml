@@ -3,9 +3,11 @@
     Layout = "_Layout";
 }
 <header>
-    <tr><a href='@Url.Action("Index")'></a></tr>
-    <tr><a href='@Url.Action("Elecciones")'></a></tr>
-    <tr><a href='@Url.Action("Creditos")'></a></tr>
+    <table>
+        <tr><a href='@Url.Action("Index")'></a></tr>
+        <tr><a href='@Url.Action("Elecciones")'></a></tr>
+        <tr><a href='@Url.Action("Creditos")'></a></tr>
+    </table>
 </header>
 <div class="partido-elegido">
     <h1>@ViewBag.detallesPartido.Nombre</h1>
